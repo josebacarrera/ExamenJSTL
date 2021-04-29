@@ -17,6 +17,15 @@
 			<a class="date <c:if test="${orderby == 'update_at'}">selected</c:if>" href="Explorar?id=${actual_element.id}&orderby=updated_at&ascdesc=${ascdesc}"><span>Fecha Modificacion</span></a>
 		</div>
 		
+		<c:if test="${actual_element != null}">
+			<div class="row">
+				<a class="name" href="Explorar?id=${actual_element.parent_id}">
+				<img class="icon" src="images/icons/folder_up.png"/>
+				<span class="text">...</span>
+				</a>
+			</div>
+		</c:if>
+		
 		<c:forEach items="${elements}" var="element">
 			<div class="row">
 				<a class="name" href="Explorar?id=${element.id}">
